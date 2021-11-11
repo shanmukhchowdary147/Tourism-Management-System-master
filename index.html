@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style type="text/css">
+      .signup-op a{
+        text-decoration: none;
+        border: 2px solid #000;
+        background-color: rgba(68,241,154,1);
+        padding: 8px 20px;
+        color: black;
+        transition: 0.8s ease;
+      }
+      .signup-op a:hover{
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <header>   
+      <div class="slideshow-container">
+        <div class="mySlides fade">
+          <img src="tower.jpg" style="width:100%">
+        </div>
+        <div class="main">
+            <ul>
+              <ul class="list">
+                  <li class="logo"><a href="index.html"><img src="earth-globe.png" alt="Logo" style="width:36px;height:36px"></a></li>
+                  <div class="search">
+                    <form method="POST" action="info.php">
+                      <input type="text" name="search_p" placeholder="Search.." size="50">
+                      <input type="image" name="submit_p" src="search_icon.png" alt="Search image" style="width:22;height:22; margin-left: 60px; margin-top: 32px;">
+                    </form>
+                  </div>
+              </ul>
+              <ul class="list2">
+                <li class="active-menu"><a href="#">Home</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a id="long" href="destination.html">Book</a></li>
+                <li><a href="gallery.html">Guide Me</a></li>
+                <li><a href="feedback.html">About Us</a></li>
+              </ul>
+            </ul>
+        </div>
+      </div>
+    </header>
+    <br>
+    
+    <div class="title">
+      <h1>Welcome to our Travel Agency</h1>
+    </div>
+    <div class="about">
+      <h2>Abouts Us</h2>
+      <ul>
+        <li>
+          Our travel agency manages your travel bookings.
+        </li>
+        <li>
+          We give you special discounts on holidays and ocassions like diwali, dussehra etc.
+        </li>
+        <li>
+          Dont worry, even if you dont know how to book, click on Guid Me option we'll guide through the process.
+        </li>
+      </ul>
+    </div>
+
+    <script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
+    </script>
+
+  </body>
+</html> 
